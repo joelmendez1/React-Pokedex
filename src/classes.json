@@ -1,0 +1,16 @@
+[
+    {
+        "class": "grass", 
+        "background": {
+            "firstColor": "#097931",
+            "secondColor": "#00ff17"
+        }
+    },
+    {
+        "class": "rock",
+        "background": {
+            "firstColor": "red",
+            "secondColor": "black"
+        }
+    }
+]

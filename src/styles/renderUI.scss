@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//Variables
+
+$main-font:'Montserrat', sans-serif;
+$white: #ffffff;
+
+.render-ui {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 12em;
+    max-width: 30em;
+    height: 9em;
+    border-radius: 50px;
+    box-shadow: 5px 5px black;
+    overflow: hidden;
+    margin-left: 15px;
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+        min-width: 40%;
+        max-width: 100%;
+        margin-left: 2em;
+        font-family: $main-font;
+        color: $white;
+        text-transform: uppercase;
+
+        h1 {
+            font-size: 50px;
+            text-shadow: 2px 3px 3px black;
+        }
+
+        p {
+            text-shadow: 1px 1px 2px black;
+        }
+    }
+
+    img {
+        position: relative;
+        bottom: 0;
+        width: 10em;
+        height: 10em;
+    }
+}
