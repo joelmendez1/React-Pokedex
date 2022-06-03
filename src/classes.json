@@ -2,8 +2,8 @@
     {
         "class": "grass", 
         "background": {
-            "firstColor": "#097931",
-            "secondColor": "#00ff17"
+            "firstColor": "#89c893",
+            "secondColor": "#49896f"
         }
     },
     {
@@ -11,6 +11,48 @@
         "background": {
             "firstColor": "red",
             "secondColor": "black"
+        }
+    },
+    {
+        "class": "ice",
+        "background": {
+            "firstColor": "#3D7DCA",
+            "secondColor": "#003A70"
+        }
+    },
+    {
+        "class": "water",
+        "background": {
+            "firstColor": "#23afcc",
+            "secondColor": "#84add7"
+        }
+    },
+    {
+        "class": "electric",
+        "background": {
+            "firstColor": "#ffcb05",
+            "secondColor": "#c7a008"
+        }
+    },
+    {
+        "class": "fairy",
+        "background": {
+            "firstColor": "#f59bad",
+            "secondColor": "#fad0d5"
+        }
+    },
+    {
+        "class": "psychic",
+        "background": {
+            "firstColor": "#b38bb3",
+            "secondColor": "#dbd4e0"
+        }
+    },
+    {
+        "class": "ghost",
+        "background": {
+            "firstColor": "a29cbb",
+            "secondColor": "#7d78a3"
         }
     }
 ]
