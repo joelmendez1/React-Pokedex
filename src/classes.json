@@ -2,8 +2,8 @@
     {
         "class": "grass", 
         "background": {
-            "firstColor": "#89c893",
-            "secondColor": "#49896f"
+            "firstColor": "rgba(137,200,147,1)",
+            "secondColor": "rgba(73,137,111,1)"
         }
     },
     {
@@ -16,43 +16,43 @@
     {
         "class": "ice",
         "background": {
-            "firstColor": "#3D7DCA",
-            "secondColor": "#003A70"
+            "firstColor": "rgba(61, 125, 202, 1)",
+            "secondColor": "rgba(0, 58, 112, 1)"
         }
     },
     {
         "class": "water",
         "background": {
-            "firstColor": "#23afcc",
-            "secondColor": "#84add7"
+            "firstColor": "rgba(35, 175, 204, 1)",
+            "secondColor": "rgba(132, 173, 215, 1)"
         }
     },
     {
         "class": "electric",
         "background": {
-            "firstColor": "#ffcb05",
-            "secondColor": "#c7a008"
+            "firstColor": "rgba(255, 203, 4, 1)",
+            "secondColor": "rgba(199, 160, 8, 1)"
         }
     },
     {
         "class": "fairy",
         "background": {
-            "firstColor": "#f59bad",
-            "secondColor": "#fad0d5"
+            "firstColor": "rgba(245, 155, 173, 1)",
+            "secondColor": "rgba(250, 208, 213, 1)"
         }
     },
     {
         "class": "psychic",
         "background": {
-            "firstColor": "#b38bb3",
-            "secondColor": "#dbd4e0"
+            "firstColor": "rgba(179, 139, 179, 1)",
+            "secondColor": "rgba(219, 212, 224, 1)"
         }
     },
     {
         "class": "ghost",
         "background": {
-            "firstColor": "a29cbb",
-            "secondColor": "#7d78a3"
+            "firstColor": "rgba(162, 156, 187, 1)",
+            "secondColor": "rgba(125, 120, 163, 1)"
         }
     }
 ]

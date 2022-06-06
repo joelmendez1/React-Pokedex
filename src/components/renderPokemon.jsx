@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { useAxios } from "./useAxios";
+import { useAxios } from "./utils/useAxios";
 
-import { RenderUI } from "./renderUI";
-import { GetPokemon } from "./getPokemon";
+import { Card } from "./cards/card";
+import { Pokemon } from "./randomPokemon"
 
-const Pokemon = () => {
+const RenderPokemon = () => {
     const [query, setQuery] = useState('');
     const [pokemon, setPokemon] = useState('');
     const [loading, setLoading] = useState(false);
@@ -32,17 +32,17 @@ const Pokemon = () => {
             onChange={(e) => {setQuery(e.target.value)}}
             onKeyPress={search}
             />
-           {
+            {
                 (usedInput && query !== '') ? 
                     (
                         !loading ? 
-                            <RenderUI initialState={pokemon}/> :
+                            <Card initialState={pokemon}/> :
                             'Esta cargando'
                     ) : 
-                    <GetPokemon />
-           }
+                   <Pokemon />
+            }
         </div>
     );
 }
 
-export { Pokemon }
+export { RenderPokemon }
