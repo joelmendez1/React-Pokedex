@@ -5,6 +5,7 @@ import { useAxios } from "./utils/useAxios";
 import "./homePage.css"
 
 import { RenderPokemon } from "./renderPokemon"
+import { Pokemon } from "./randomPokemon";
 
 
 
@@ -24,7 +25,6 @@ const HomePage = () => {
 
     return (
         <div>
-            <h1>What Pokemon are you looking for?</h1>
             <RenderPokemon />
         </div>
     )

@@ -1,5 +1,7 @@
-const checkBackground = (pokemonType, classes, tag, type, direction = 'circle') => {
+//Compares pokemonTypE and classes to get a particular element and sets a two colors based on that particular element.
+//Tag, type and direction are html and css elements used to dinamically add a background color.
 
+const checkBackground = (pokemonType, classes, tag, type, direction = 'circle') => {
     let firstColor = '';
     let secondColor = '';
 
@@ -22,6 +24,8 @@ const checkBackground = (pokemonType, classes, tag, type, direction = 'circle') 
             }
     }
 }
+
+//Saves in the localStorage all the pokemons who gets a like
 
 const likedPokemons = []
 
@@ -48,13 +52,33 @@ const savePokemon = (args) => {
     }
 }
 
+//Actually it doesn't strictly remove an element from the localstorage, insted it filters all the elements from the localstorage array who doesn't match a particular element.
+
 const deleteSavedPokemon = (name) => {
     const newList = JSON.parse(localStorage.getItem('likedPokemons')).filter(element => element.name !== name)
     localStorage.setItem('likedPokemons', JSON.stringify(newList))
 }
 
-const toogleFunctionality = () => {
-    
+//It must toogle both (delete and save) functions and set an state.
+
+const toogleLike = (name, pokemonType, artWork) => {
+    const retrieveLikedPokemons = JSON.parse(localStorage.getItem('likedPokemons'));
+
+    if(retrieveLikedPokemons === null) {
+        savePokemon({name, pokemonType, artWork});
+        console.log('Likeado');
+    } else {
+        const pokemones = retrieveLikedPokemons.map(element => element.name);
+
+        switch(pokemones.includes(name)) {
+            case true:
+                deleteSavedPokemon(name);
+                break
+            case false:
+                savePokemon({name, pokemonType, artWork});
+                break
+        }
+    }
 }
 
-export { checkBackground, savePokemon, deleteSavedPokemon }
+export { checkBackground, toogleLike }

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useAxios } from "./utils/useAxios";
 
 import { Card } from "./cards/card";
+import { GiCoinflip } from "react-icons/gi"
 
 const randomInteger = (max, min) => {
     const randomInt = (Math.floor(Math.random() * (max - min) + min))
@@ -10,8 +11,8 @@ const randomInteger = (max, min) => {
 }
 
 const Pokemon = () => {
-    const [pokemon, setPokemon] = useState({name: 'default', sprites: 'default'})
-    const [loading, setLoading] = useState(true)   
+    const [pokemon, setPokemon] = useState({name: 'default', sprites: 'default'});
+    const [loading, setLoading] = useState(true);
 
     const request = useAxios()
 
@@ -22,10 +23,16 @@ const Pokemon = () => {
     return (
         <div className="get-pokemon__main">
             {!loading ?  
-                <Card initialState={pokemon} /> : 
+                <Card initialState={pokemon}/> :
                 'Esta cargando'   
             }
-            <button onClick={() => request(randomInteger(1, 800), setPokemon, setLoading)}>Get a random pokemon</button>
+            <GiCoinflip
+                    className="card_flip-a-coin"
+                    size={50}
+                    onClick={() => {
+                        request(randomInteger(1, 800), setPokemon, setLoading)
+                    }}
+                />
         </div>
     )
 }

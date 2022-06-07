@@ -4,6 +4,7 @@ import { useAxios } from "./utils/useAxios";
 
 import { Card } from "./cards/card";
 import { Pokemon } from "./randomPokemon"
+import "./renderPokemon.css"
 
 const RenderPokemon = () => {
     const [query, setQuery] = useState('');
@@ -23,15 +24,18 @@ const RenderPokemon = () => {
     };
 
     return (
-        <div>
-            <input 
-            type="text" 
-            className=""
-            placeholder="Seacher"
-            value={query}
-            onChange={(e) => {setQuery(e.target.value)}}
-            onKeyPress={search}
+        <div className="render-ui">
+            <div className="render-ui_searcher">
+                <h1>What Pokemon are you looking for?</h1>
+                <input
+                type="text"
+                className=""
+                placeholder={`🔍 SEARCH POKEMON`}
+                value={query}
+                onChange={(e) => {setQuery(e.target.value)}}
+                onKeyPress={search}
             />
+            </div>
             {
                 (usedInput && query !== '') ? 
                     (
