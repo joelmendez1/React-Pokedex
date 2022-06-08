@@ -4,11 +4,8 @@ import { useAxios } from "./utils/useAxios";
 
 import { Card } from "./cards/card";
 import { GiCoinflip } from "react-icons/gi"
+import  { randomUrl } from "../components/utils/functions"
 
-const randomInteger = (max, min) => {
-    const randomInt = (Math.floor(Math.random() * (max - min) + min))
-    return `https://pokeapi.co/api/v2/pokemon/${randomInt}`
-}
 
 const Pokemon = () => {
     const [pokemon, setPokemon] = useState({name: 'default', sprites: 'default'});
@@ -17,7 +14,7 @@ const Pokemon = () => {
     const request = useAxios()
 
     useEffect(() => {
-        request(randomInteger(1, 300), setPokemon, setLoading)
+        request(randomUrl(1, 300), setPokemon, setLoading)
     }, [])
 
     return (
@@ -30,7 +27,7 @@ const Pokemon = () => {
                     className="card_flip-a-coin"
                     size={50}
                     onClick={() => {
-                        request(randomInteger(1, 800), setPokemon, setLoading)
+                        request(randomUrl(1, 800), setPokemon, setLoading)
                     }}
                 />
         </div>

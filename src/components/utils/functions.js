@@ -1,3 +1,8 @@
+const randomUrl = (max, min) => {
+    const randomInt = (Math.floor(Math.random() * (max - min) + min))
+    return `https://pokeapi.co/api/v2/pokemon/${randomInt}`
+}
+
 //Compares pokemonTypE and classes to get a particular element and sets a two colors based on that particular element.
 //Tag, type and direction are html and css elements used to dinamically add a background color.
 
@@ -81,4 +86,4 @@ const toogleLike = (name, pokemonType, artWork) => {
     }
 }
 
-export { checkBackground, toogleLike }
+export { checkBackground, toogleLike, randomUrl }
