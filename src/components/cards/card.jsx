@@ -1,8 +1,6 @@
 import React from "react";
-
 import { GiCardRandom } from "react-icons/gi";
 import { BsFillSuitHeartFill } from "react-icons/bs";
-
 import "./card.css"
 import classes from '../../classes.json'
 import { checkBackground, toogleLike } from "../utils/functions";

@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import { useAxios } from "./utils/useAxios";
 import { PokemonProvider } from "./Pokemon/PokemonContext";
-
 import { Card } from "./cards/card";
 import { Pokemon } from "./Pokemon/randomPokemon"
 import "./renderPokemon.css"

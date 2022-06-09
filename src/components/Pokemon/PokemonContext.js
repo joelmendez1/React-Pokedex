@@ -1,11 +1,11 @@
 import React, { createContext } from "react";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { useAxios } from "../utils/useAxios";
 import { randomUrl } from "../utils/functions";
 
 const PokemonContext = createContext();
 
-function PokemonProvider(props) {
+const PokemonProvider = (props) => {
     const [pokemon, setPokemon] = useState({name: 'default', sprites: 'default'});
     const [loading, setLoading] = useState(true);
 

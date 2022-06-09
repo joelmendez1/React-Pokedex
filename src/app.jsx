@@ -1,12 +1,11 @@
 import React from "react";
+import "./app.css"
+import { RenderPokemon } from "./components/renderPokemon";
 
-import { Pokemon } from "./components/renderPokemon";
-import { HomePage } from "./components/homePage";
-
-const App = (props) => {
+const App = () => {
     return (
         <div>
-            <HomePage />
+            <RenderPokemon />
         </div>
     )
 }
