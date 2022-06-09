@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
-import classes from '../../classes.json'
-import "./card.css"
+import { GiCardRandom } from "react-icons/gi";
 import { BsFillSuitHeartFill } from "react-icons/bs";
 
+import "./card.css"
+import classes from '../../classes.json'
 import { checkBackground, toogleLike } from "../utils/functions";
 
 const Card = (props) => {
@@ -15,6 +16,10 @@ const Card = (props) => {
         <div>
             <div className="card_ui" style={checkBackground(pokemonType, classes, 'background', 'radial', 'circle')}>
                 <div className="card_buttons">
+                    <GiCardRandom
+                    className="card_random-card"
+                    size={40}
+                    onClick={props.onClick}/>
                     <BsFillSuitHeartFill
                     className="card_heart"
                     size={30}

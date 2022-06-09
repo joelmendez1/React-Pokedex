@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useAxios } from "./utils/useAxios";
+import { PokemonProvider } from "./Pokemon/PokemonContext";
 
 import { Card } from "./cards/card";
-import { Pokemon } from "./randomPokemon"
+import { Pokemon } from "./Pokemon/randomPokemon"
 import "./renderPokemon.css"
 
 const RenderPokemon = () => {
@@ -43,7 +44,9 @@ const RenderPokemon = () => {
                             <Card initialState={pokemon}/> :
                             'Esta cargando'
                     ) : 
-                   <Pokemon />
+                   <PokemonProvider>
+                       <Pokemon />
+                   </PokemonProvider>
             }
         </div>
     );

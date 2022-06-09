@@ -5,7 +5,6 @@ import { useAxios } from "./utils/useAxios";
 import "./homePage.css"
 
 import { RenderPokemon } from "./renderPokemon"
-import { Pokemon } from "./randomPokemon";
 
 
 

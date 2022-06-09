@@ -11,13 +11,11 @@
 
 .card_buttons {
     display: flex;
-    justify-content: flex-end;
-    margin: 0.6rem 2rem 0 0;
-    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
     height: 10%;
-}
-
-.card_heart {
+    margin-top: 0.3rem;
     color: #ffffff;
     cursor: pointer;
 }
@@ -25,6 +23,11 @@
 .card_heart:hover {
     color: red;
     transform: scale(1.1);
+}
+
+.card_random-card:hover {
+    transform: scale(1.1);
+    color:goldenrod;
 }
 
 .card_ui figure {
@@ -46,10 +49,10 @@
 .card_ui figure::before {
     position: absolute;
     content: ' ';
-    border-top: 1px solid white;
+    border-top: 1px solid #ffffff;
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 12rem;
+    height: 12rem;
     bottom: -0.7rem;
 }
 
