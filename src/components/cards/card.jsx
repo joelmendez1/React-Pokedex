@@ -18,15 +18,12 @@ const Card = (props) => {
     const pokemonType = types[0].type.name
     const artWork = sprites.other.dream_world.front_default
 
-    const showElement = (event) => {
-        const items = event.target.parentNode.nextSibling.childNodes;
+    const componentsArr = [Stats, Moves, Evolution];
 
+    const showElement = (event) => {
         if(event.target.textContent !== itemHovered){
             setItemHovered(event.target.textContent)
         };
-
-        for(let [index, element] of items.entries()) {
-        }
     }
 
     return (
@@ -55,14 +52,21 @@ const Card = (props) => {
                                 <button onMouseOver={(e) => showElement(e)}>Moves</button>
                                 <button onMouseOver={(e) => showElement(e)}>Evolution</button>
                             </div>
-                           <div className="test">
-                                <Stats context={props.initialState} />
-                                <Moves />
-                                <Evolution />
+                           <div className="card_characteristics">
+                                {/*This allows to dynamically render a determinated component from the "characteristics" folder*/}
+                                {
+                                    componentsArr.map((e) => {
+                                        if(e.name === itemHovered) {
+                                            return (
+                                                e()
+                                            )
+                                        }
+                                    })
+                                }
                            </div>
                         </nav>
                     </div>
-                </div>z
+                </div>
             </div>
         </div>
     )
