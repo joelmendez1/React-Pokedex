@@ -102,13 +102,21 @@
     margin-top: 1rem;
 }
 
-.card_text nav * {
+.button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.button-wrapper * {
+    all: unset;
     text-transform: capitalize;
     font-size: medium;
     font-weight: 600;
 }
 
-.card_text nav *:hover {
+.button-wrapper *:hover {
     cursor: pointer;
     border-bottom: 2px solid white;
 }
