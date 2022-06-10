@@ -1,14 +1,33 @@
-import React from "react";
-import { GiCardRandom } from "react-icons/gi";
-import { BsFillSuitHeartFill } from "react-icons/bs";
+import React, { useState } from "react";
+
 import "./card.css"
 import classes from '../../classes.json'
+
+import { GiCardRandom } from "react-icons/gi";
+import { BsFillSuitHeartFill } from "react-icons/bs";
+import { Stats } from "../card-characteristics/stats/stats";
+import { Moves } from "../card-characteristics/moves/moves";
+import { Evolution } from "../card-characteristics/evolution/evolution";
+
 import { checkBackground, toogleLike } from "../utils/functions";
 
 const Card = (props) => {
+    const [itemHovered, setItemHovered] = useState('')
+
     const {name, sprites, types} = props.initialState
     const pokemonType = types[0].type.name
     const artWork = sprites.other.dream_world.front_default
+
+    const showElement = (event) => {
+        const items = event.target.parentNode.nextSibling.childNodes;
+
+        if(event.target.textContent !== itemHovered){
+            setItemHovered(event.target.textContent)
+        };
+
+        for(let [index, element] of items.entries()) {
+        }
+    }
 
     return (
         <div>
@@ -31,15 +50,19 @@ const Card = (props) => {
                         <h1>{name}</h1>
                         <p className="card_text-pokemon_type" >{pokemonType}</p>
                         <nav>
-                            <p>stats</p>
-                            <p>moves</p>
-                            <p>evolution</p>
-                            {/* <Stats />
-                            <Moves />
-                            <Evolution /> */}
+                            <div className="button-wrapper">
+                                <button onMouseOver={(e) => showElement(e)}>Stats</button>
+                                <button onMouseOver={(e) => showElement(e)}>Moves</button>
+                                <button onMouseOver={(e) => showElement(e)}>Evolution</button>
+                            </div>
+                           <div className="test">
+                                <Stats context={props.initialState} />
+                                <Moves />
+                                <Evolution />
+                           </div>
                         </nav>
                     </div>
-                </div>
+                </div>z
             </div>
         </div>
     )

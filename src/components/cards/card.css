@@ -96,18 +96,19 @@
 
 .card_text nav {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     width: 100%;
     margin-top: 1rem;
 }
 
-.card_text nav p {
+.card_text nav * {
     text-transform: capitalize;
     font-size: medium;
     font-weight: 600;
 }
 
-.card_text nav p:hover {
+.card_text nav *:hover {
     cursor: pointer;
     border-bottom: 2px solid white;
 }

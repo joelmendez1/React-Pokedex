@@ -1,12 +1,15 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useAxios } from "./utils/useAxios";
-import { PokemonProvider } from "./Pokemon/PokemonContext";
+import { usePrevious } from "./utils/functions";
 import { Card } from "./cards/card";
 import { Pokemon } from "./Pokemon/randomPokemon"
 import "./renderPokemon.css"
+import { PokemonContext } from "./Pokemon/PokemonContext";
 
 const RenderPokemon = () => {
+    const randomPokemon = useContext(PokemonContext);
+
     const [query, setQuery] = useState('');
     const [pokemon, setPokemon] = useState('');
     const [loading, setLoading] = useState(false);
@@ -15,10 +18,14 @@ const RenderPokemon = () => {
     const url = `https://pokeapi.co/api/v2/pokemon/${query}`.toLocaleLowerCase();
 
     const request = useAxios();
+    const getPreviousValue = usePrevious(pokemon);
+
+    //Sets a previous pokemon state if the query isn't valid.
+    const prevValue = pokemon ? getPreviousValue : randomPokemon.pokemon;
 
     const search = async(e) => {
         if(e.key === 'Enter') {
-            await request(url, setPokemon, setLoading)
+            await request(url, setPokemon, setLoading, prevValue)
             setUsedInput(true)
         }
     };
@@ -43,9 +50,7 @@ const RenderPokemon = () => {
                             <Card initialState={pokemon}/> :
                             'Esta cargando'
                     ) : 
-                   <PokemonProvider>
-                       <Pokemon />
-                   </PokemonProvider>
+                    <Pokemon />
             }
         </div>
     );

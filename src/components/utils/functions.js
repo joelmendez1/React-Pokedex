@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react"
+
 const randomUrl = (max, min) => {
     const randomInt = (Math.floor(Math.random() * (max - min) + min))
     return `https://pokeapi.co/api/v2/pokemon/${randomInt}`
@@ -86,4 +88,12 @@ const toogleLike = (name, pokemonType, artWork) => {
     }
 }
 
-export { checkBackground, toogleLike, randomUrl }
+const usePrevious = (value) => {
+    const ref = useRef();
+    useEffect(() => {
+        ref.current = value;
+    })
+    return ref.current;
+}
+
+export { checkBackground, toogleLike, randomUrl, usePrevious }
