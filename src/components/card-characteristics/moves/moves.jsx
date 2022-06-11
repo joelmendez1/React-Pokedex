@@ -3,7 +3,7 @@ import React from "react";
 const Moves = (props) => {
 
     return (
-        <div>
+        <div key={"moves"}>
             Moves
         </div>
     )

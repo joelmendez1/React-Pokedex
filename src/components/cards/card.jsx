@@ -17,7 +17,6 @@ const Card = (props) => {
     const {name, sprites, types} = props.initialState
     const pokemonType = types[0].type.name
     const artWork = sprites.other.dream_world.front_default
-
     const componentsArr = [Stats, Moves, Evolution];
 
     const showElement = (event) => {
@@ -55,10 +54,10 @@ const Card = (props) => {
                            <div className="card_characteristics">
                                 {/*This allows to dynamically render a determinated component from the "characteristics" folder*/}
                                 {
-                                    componentsArr.map((e) => {
-                                        if(e.name === itemHovered) {
-                                            return (
-                                                e()
+                                    componentsArr.map(component => {
+                                        if(component.name === itemHovered) {
+                                            return(
+                                                component()
                                             )
                                         }
                                     })
